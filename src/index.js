@@ -1,4 +1,5 @@
 import 'dotenv/config'
+import 'ignore-styles'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
@@ -8,7 +9,7 @@ import cors from 'cors'
 import { resolve } from 'path'
 
 import { htmlTemplate } from './htmlTemplate'
-import App from './components/app'
+import App from './components/App'
 
 const app = express() // Create express app
 app.use('/assets', express.static(resolve(__dirname, '../assets'))) // Serving bundled + css files

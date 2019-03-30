@@ -1,21 +1,14 @@
 import React, { Component } from 'react'
-import { Route, Switch, NavLink } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
+
+import './x.css'
+import './x.less'
 
 class App extends Component {
   render () {
     return (
       <>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/x">x</NavLink>
-          </li>
-          <li>
-            <NavLink to="/y">y</NavLink>
-          </li>
-        </ul>
+        <button className='redButton asd'>asd</button>
         <Switch>
           <Route exact path="/" render={() => <div>/</div>} />
           <Route path="/x" render={() => <div>x</div>} />

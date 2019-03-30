@@ -5,7 +5,7 @@ export const htmlTemplate = (title, pageContent = '') =>
     <meta charset="utf-8">
     <title> ${title} </title>
     <link rel='shortcut icon' type='image/x-icon' href='media/favicon.ico' />
-    <link href="assets/style.css" rel="stylesheet">
+    <link href="assets/bundle.css" rel="stylesheet">
   </head>
   <body>
     <div id="root">
