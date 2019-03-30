@@ -50,7 +50,8 @@ module.exports = () => ({
             '@babel/plugin-transform-spread',
             '@babel/plugin-proposal-class-properties',
             '@babel/transform-runtime',
-            '@babel/plugin-proposal-optional-chaining'
+            '@babel/plugin-proposal-optional-chaining',
+            ["import", { libraryName: "antd", style: "css" }]
           ]
         }
       },
