@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import './x.less'
-
-import { Button } from 'antd'
+import { routes } from '../routes'
 
 class App extends Component {
   render () {
     return (
       <>
-        <Button type='primary'>asd</Button>
         <Switch>
-          <Route exact path='/' render={() => <div>/</div>} />
-          <Route path='/x' render={() => <div>x</div>} />
-          <Route path='/y' render={() => <div>y</div>} />
+          {
+            routes.map((route, index) => (
+              <Route
+                key={index.toString()}
+                exact={route.exact}
+                path={route.path}
+                render={() => route.render}
+              />
+            ))
+          }
           <Route render={() => <div>404</div>} />
         </Switch>
       </>

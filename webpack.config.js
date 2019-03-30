@@ -66,7 +66,12 @@ module.exports = () => ({
             }
           },
           'css-loader',
-          'less-loader' // compiles Less to CSS
+          {
+            loader: 'less-loader', // compiles Less to CSS
+            options: {
+              javascriptEnabled: true
+          }
+          }
         ]
       }
     ]
