@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import './x.css'
 import './x.less'
 
 class App extends Component {
