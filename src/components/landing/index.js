@@ -3,8 +3,6 @@ import { enquireScreen } from 'enquire-js'
 
 import './less/antMotionStyle.less'
 
-import { Affix } from 'antd'
-
 import TopNavigation from './TopNavigation'
 import Banner from './Banner'
 
@@ -44,9 +42,7 @@ class Landing extends Component {
         className='templates-wrapper'
         ref={d => { this.dom = d }}
       >
-        {/* <Affix offsetTop={0}> */}
-          <TopNavigation isMobile={isMobile} />
-        {/* </Affix> */}
+        <TopNavigation isMobile={isMobile} />
         <Banner />
       </div>
     )

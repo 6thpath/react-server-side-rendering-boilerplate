@@ -48,7 +48,8 @@ module.exports = () => ({
           presets: ['@babel/env', '@babel/react'],
           plugins: [
             '@babel/plugin-transform-spread',
-            '@babel/plugin-proposal-class-properties',
+            ['@babel/plugin-proposal-decorators', { 'legacy': true }],
+            ['@babel/plugin-proposal-class-properties', { 'loose': true }],
             '@babel/transform-runtime',
             '@babel/plugin-proposal-optional-chaining',
             ["import", { libraryName: "antd", style: "css" }]

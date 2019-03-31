@@ -296,6 +296,15 @@
     "@babel/helper-create-class-features-plugin" "^7.4.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-proposal-decorators@^7.4.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.4.0.tgz#8e1bfd83efa54a5f662033afcc2b8e701f4bb3a9"
+  integrity sha512-d08TLmXeK/XbgCo7ZeZ+JaeZDtDai/2ctapTRsWWkkmy7G/cqz8DQN/HlWG7RR4YmfXxmExsbU3SuCjlM7AtUg==
+  dependencies:
+    "@babel/helper-create-class-features-plugin" "^7.4.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-syntax-decorators" "^7.2.0"
+
 "@babel/plugin-proposal-json-strings@^7.2.0":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-json-strings/-/plugin-proposal-json-strings-7.2.0.tgz#568ecc446c6148ae6b267f02551130891e29f317"
@@ -341,6 +350,13 @@
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-async-generators/-/plugin-syntax-async-generators-7.2.0.tgz#69e1f0db34c6f5a0cf7e2b3323bf159a76c8cb7f"
   integrity sha512-1ZrIRBv2t0GSlcwVoQ6VgSLpLgiN/FVQUzt9znxo7v2Ov4jJrs8RY8tv0wvDmFN3qIdMKWrmMMW6yZ0G19MfGg==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-syntax-decorators@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-decorators/-/plugin-syntax-decorators-7.2.0.tgz#c50b1b957dcc69e4b1127b65e1c33eef61570c1b"
+  integrity sha512-38QdqVoXdHUQfTpZo3rQwqQdWtCn5tMv4uV6r2RMfTqNBuv4ZBhz79SfaQWKTVmxHjeFv/DnXVC/+agHCklYWA==
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
@@ -5199,6 +5215,17 @@ rc-animate@^3.0.0-rc.1, rc-animate@^3.0.0-rc.4, rc-animate@^3.0.0-rc.5:
     rc-util "^4.5.0"
     react-lifecycles-compat "^3.0.4"
 
+rc-banner-anim@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/rc-banner-anim/-/rc-banner-anim-2.2.2.tgz#9416636d3486eeca400f395061b9122d7b2552a6"
+  integrity sha512-a7vaTYQIdeb1XnXHzKcNGyotF8zx7jc0a0njYGHs3uJNew0qnS9V5gH6FdmsYfhXaWVE5nUr0NZhxjcnS+W2XA==
+  dependencies:
+    babel-runtime "6.x"
+    prop-types "^15.5.0"
+    rc-tween-one "^2.2.15"
+    style-utils "~0.2.0"
+    tween-functions "1.x"
+
 rc-calendar@~9.10.3:
   version "9.10.10"
   resolved "https://registry.yarnpkg.com/rc-calendar/-/rc-calendar-9.10.10.tgz#82ba059e98cdd1957e1740ec3eaac407a60e108f"
@@ -5571,7 +5598,7 @@ rc-trigger@^3.0.0-rc.2:
     rc-animate "^3.0.0-rc.1"
     rc-util "^4.4.0"
 
-rc-tween-one@^2.3.2, rc-tween-one@^2.3.4:
+rc-tween-one@^2.2.15, rc-tween-one@^2.3.2, rc-tween-one@^2.3.4:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/rc-tween-one/-/rc-tween-one-2.3.4.tgz#cec87e605b5dfb330e84511f55b5fdff73b2d4f8"
   integrity sha512-UGb0Vb+TENbt23JKj38ofIabavDQweF4b6HbphaixYWTkZ8Mdz+Eu4aWOEjIKfL2dFTsRjRWUaEIWuhe1zSmcQ==
@@ -6557,7 +6584,7 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-tween-functions@~1.2.0:
+tween-functions@1.x, tween-functions@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/tween-functions/-/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
   integrity sha1-GuOlDnxguz3vd06scHrLynO7w/8=
