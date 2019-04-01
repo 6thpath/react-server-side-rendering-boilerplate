@@ -68,7 +68,7 @@ class TopNavigation extends Component {
                 <TweenOne animation={{ ...animationSettings, x: -30 }}>
                   <Row>
                     <Col span={12}>
-                      <img className='pageHeader-item-img__custom' src='/media/solutions_IoT.jpg' alt='IoT'/>
+                      <img className='pageHeader-item-img__custom' src='/media/slide4.jpg' alt='IoT'/>
                     </Col>
                     <Col span={12}>
                       <p>INTERNET OF THING</p>

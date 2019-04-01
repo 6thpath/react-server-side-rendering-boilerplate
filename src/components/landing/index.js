@@ -5,6 +5,9 @@ import './less/antMotionStyle.less'
 
 import TopNavigation from './TopNavigation'
 import Banner from './Banner'
+import SectionOne from './SectionOne'
+import SectionTwo from './SectionTwo'
+import SectionThree from './SectionThree'
 
 let isMobile
 enquireScreen(b => {
@@ -19,21 +22,11 @@ class Landing extends Component {
     }
   }
 
-  // resize = () => {
-  //   this.setState({isMobile: window.innerWidth <= 767})
-  // }
-
   componentDidMount () {
     enquireScreen(b => {
       this.setState({ isMobile: !!b })
     })
-    // window.addEventListener('resize', this.resize)
-    // this.resize()
   }
-
-  // componentWillUnmount () {
-  //   window.removeEventListener('resize', this.resize)
-  // }
 
   render () {
     const { isMobile } = this.state
@@ -44,6 +37,9 @@ class Landing extends Component {
       >
         <TopNavigation isMobile={isMobile} />
         <Banner />
+        <SectionOne />
+        <SectionTwo />
+        <SectionThree />
       </div>
     )
   }
