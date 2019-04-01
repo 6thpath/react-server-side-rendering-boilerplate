@@ -81,24 +81,22 @@ const industries = [
   }
 ]
 
-const returnChildren = data => {
-  return (
-    <div className='container'>
-      <div className='offers'>
-        <div id='industries' className='offers-tabcontent'>
-          {data.map((item, i) => (
-            <div className='tabcontent-item' style={item.customTabStyle} key={i.toString()}>
-              <img className='offer-image' src={item.image.imgSrc} alt={item.image.alt} />
-              <div className='offer-content'>
-                <h3 className='offer-content-title'>{item.title}</h3>
-                <p className='offer-content-description'>{item.description}</p>
-              </div>
+const returnChildren = data => (
+  <div className='container'>
+    <div className='offers'>
+      <div className='offers-tabcontent'>
+        {data.map((item, i) => (
+          <div className='tabcontent-item' style={item.customTabStyle} key={i.toString()}>
+            <img className='offer-image' src={item.image.imgSrc} alt={item.image.alt} />
+            <div className='offer-content'>
+              <h3 className='offer-content-title'>{item.title}</h3>
+              <p className='offer-content-description'>{item.description}</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
-  )
-}
+  </div>
+)
 
 export { solutions, services, industries, returnChildren }

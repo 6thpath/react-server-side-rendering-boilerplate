@@ -11,7 +11,7 @@ class SectionThree extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      current: '1'
+      current: 1
     }
   }
 
@@ -20,20 +20,18 @@ class SectionThree extends Component {
   }
 
   render() {
-    const { current } = this.state
-
     const children = [
       {
         text: 'SOLUTIONS',
-        content: () => returnChildren(solutions)
+        content: solutions
       },
       {
         text: 'SERVICES',
-        content: () => returnChildren(services)
+        content: services
       },
       {
         text: 'INDUSTRIES',
-        content: () => returnChildren(industries)
+        content: industries
       }
     ]
 
@@ -60,7 +58,8 @@ class SectionThree extends Component {
             leave={null}
             component=''
           >
-            {content()}
+          asd
+            {returnChildren(content)}
           </TweenOne.TweenOneGroup>
         </TabPane>
       )
@@ -85,7 +84,7 @@ class SectionThree extends Component {
               <Tabs
                 key='tabs'
                 onChange={this.onChange}
-                activeKey={`${current}`}
+                activeKey={`${this.state.current}`}
               >
                 {tabsChildren}
               </Tabs>
