@@ -16,6 +16,8 @@
       }
       &-name {
         display: inline-block;
+        font-size: 16px;
+        font-weight: 600;
       }
     }
     .ant-tabs-bar {
@@ -42,7 +44,7 @@
       padding: 24px 48px;
     }
     .ant-tabs-tabpane {
-      margin-top: 40px;
+      margin-top: 20px;
     }
   }
 }
@@ -66,6 +68,7 @@
       }
       .ant-tabs-bar {
         width: auto;
+        text-align: center;
         .ant-tabs-nav {
           float: left;
         }
@@ -83,7 +86,7 @@
 
 @media screen and (max-width: 1023px) {
   .container {
-      padding:0 30px
+    padding:0 30px
   }
 }
 
@@ -95,7 +98,7 @@
 }
 
 .offers {
-  padding: 80px 0 120px;
+  padding: 20px 0 120px;
   -js-display: flex;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -231,17 +234,17 @@
 
 @media screen and (max-width: 1023px) {
   .offers-tabcontent {
-      max-width:602px
+    max-width:602px
   }
 }
 
 @media screen and (max-width: 659px) {
   .offers-tabcontent {
-      max-width:300px
+    max-width:300px
   }
 }
 
-.offers-tabcontent.active {
+.offers-tabcontent {
   max-height: none;
   height: 100%;
   width: 100%;

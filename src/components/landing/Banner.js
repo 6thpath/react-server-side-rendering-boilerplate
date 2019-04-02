@@ -3,8 +3,9 @@ import QueueAnim from 'rc-queue-anim'
 import TweenOne, { TweenOneGroup } from 'rc-tween-one'
 import BannerAnim, { Element } from 'rc-banner-anim'
 import { Button, Icon } from 'antd'
-
 import 'rc-banner-anim/assets/index.css'
+
+import { mediaDir } from '../media_dirname'
 
 const { BgElement } = Element
 
@@ -14,7 +15,7 @@ class Banner extends Component {
       {
         name: 'elem0',
         textWrapper: { className: 'pageBanner-text-wrapper' },
-        bg: { src: '/media/slide1.jpg' },
+        bg: { src: mediaDir('sliders/slide1.jpg') },
         title: {
           className: 'pageBanner-title',
           children: 'ENTERPRISE SOFTWARE DEVELOPMENT',
@@ -28,7 +29,7 @@ class Banner extends Component {
       {
         name: 'elem1',
         textWrapper: { className: 'pageBanner-text-wrapper' },
-        bg: { src: '/media/slide2.jpg' },
+        bg: { src: mediaDir('sliders/slide2.jpg') },
         title: {
           className: 'pageBanner-title',
           children: 'MOBILE APP DEVELOPMENT',
@@ -42,7 +43,7 @@ class Banner extends Component {
       {
         name: 'elem2',
         textWrapper: { className: 'pageBanner-text-wrapper' },
-        bg: { src: '/media/slide3.jpg' },
+        bg: { src: mediaDir('sliders/slide3.jpg') },
         title: {
           className: 'pageBanner-title',
           children: 'BLOCKCHAIN TECHNOLOGIES',
@@ -56,7 +57,7 @@ class Banner extends Component {
       {
         name: 'elem3',
         textWrapper: { className: 'pageBanner-text-wrapper' },
-        bg: { src: '/media/slide4.jpg' },
+        bg: { src: mediaDir('sliders/slide4.jpg') },
         title: {
           className: 'pageBanner-title',
           children: 'CUSTOM IoT DEVELOPMENT SERVICES',
@@ -70,7 +71,7 @@ class Banner extends Component {
       {
         name: 'elem4',
         textWrapper: { className: 'pageBanner-text-wrapper' },
-        bg: { src: '/media/slide5.jpg' },
+        bg: { src: mediaDir('sliders/slide5.jpg') },
         title: {
           className: 'pageBanner-title',
           children: 'CLOUD COMPUTING',
@@ -84,7 +85,7 @@ class Banner extends Component {
       {
         name: 'elem5',
         textWrapper: { className: 'pageBanner-text-wrapper' },
-        bg: { src: '/media/slide6.jpg' },
+        bg: { src: mediaDir('sliders/slide6.jpg') },
         title: {
           className: 'pageBanner-title',
           children: 'ARTIFICIAL INTELLIGENCE',

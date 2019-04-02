@@ -1,0 +1,1 @@
+export const mediaDir = path => `/media/${path}`

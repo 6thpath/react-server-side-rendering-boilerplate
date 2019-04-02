@@ -5,7 +5,8 @@ import { Tabs } from 'antd'
 
 const TabPane = Tabs.TabPane
 
-import { solutions, services, industries, returnChildren } from './SectionThree-Sub'
+import { mediaDir } from '../media_dirname'
+import { section3Data } from './dataSource/index'
 
 class SectionThree extends Component {
   constructor(props) {
@@ -16,36 +17,21 @@ class SectionThree extends Component {
   }
 
   onChange = key => {
-    this.setState({ current: key })
+    this.setState({ current: parseFloat(key) })
   }
 
   render() {
-    const children = [
-      {
-        text: 'SOLUTIONS',
-        content: solutions
-      },
-      {
-        text: 'SERVICES',
-        content: services
-      },
-      {
-        text: 'INDUSTRIES',
-        content: industries
-      }
-    ]
 
-    const tabsChildren = children.map((item, i) => {
-      const { text, content } = item
+    const tabsChildren = Object.keys(section3Data).map((item, i) => {
+      const { title, content } = section3Data[item]
       return (
         <TabPane
           key={i + 1}
           tab={
             <div className='content3-tag'>
-              <div className='content3-tag-name'>{text}</div>
+              <div className='content3-tag-name'>{title}</div>
             </div>
           }
-          className='block'
         >
           <TweenOne.TweenOneGroup
             enter={{
@@ -55,18 +41,44 @@ class SectionThree extends Component {
               type: 'from',
               ease: 'easeOutQuad',
             }}
-            leave={null}
+            leave={{ y: 30, opacity: 0 }}
             component=''
           >
-          asd
-            {returnChildren(content)}
+            <div className='container'>
+              <div className='offers'>
+                <div className='offers-tabcontent'>
+                  {
+                    content.map((tabContent, i) => (
+                      <div className='tabcontent-item' style={tabContent.customTabStyle} key={i.toString()}>
+                        <img className='offer-image' src={tabContent.image.imgSrc} alt={tabContent.image.alt} />
+                        <div className='offer-content'>
+                          <h3 className='offer-content-title'>{tabContent.title}</h3>
+                          <p className='offer-content-description'>{tabContent.description}</p>
+                        </div>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
           </TweenOne.TweenOneGroup>
         </TabPane>
       )
     })
 
     return (
-      <div className='home-page-wrapper content3-wrapper'>
+      <div
+        className='home-page-wrapper content3-wrapper'
+        style={{
+          width: '100%',
+          position: 'relative',
+          borderColor: '#666',
+          backgroundImage: `url(${mediaDir('bg-offers.jpg')})`,
+          backgroundSize: 'cover',
+          backgroundAttachment: 'fixed',
+          backgroundPosition: 'center'
+        }}
+      >
         <div className='home-page content3' style={{ padding: 20 }}>
           <div className='title-wrapper'>
             <h1 className='title-h1'>WHAT WE OFFER</h1>

@@ -8,6 +8,7 @@ import Banner from './Banner'
 import SectionOne from './SectionOne'
 import SectionTwo from './SectionTwo'
 import SectionThree from './SectionThree'
+import SectionFour from './SectionFour'
 
 let isMobile
 enquireScreen(b => {
@@ -40,6 +41,7 @@ class Landing extends Component {
         <SectionOne />
         <SectionTwo />
         <SectionThree />
+        <SectionFour />
       </div>
     )
   }

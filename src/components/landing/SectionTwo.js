@@ -4,6 +4,8 @@ import { Icon } from 'antd'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 
+import { mediaDir } from '../media_dirname'
+
 class SectionTwo extends Component {
   render () {
     const responsive = {
@@ -25,8 +27,8 @@ class SectionTwo extends Component {
             {
               Array(6).fill(1).map((item, i) => (
                 <div key={i.toString()} className='custom-carousel-item__wrapper'>
-                  <img src={`/media/logo${1+i}.png`} />
-                  <img src={`/media/logo${12-i}.png`} />
+                  <img src={mediaDir(`stakeholders/logo${1+i}.png`)} />
+                  <img src={mediaDir(`stakeholders/logo${12-i}.png`)} />
                 </div>
               ))
             }
