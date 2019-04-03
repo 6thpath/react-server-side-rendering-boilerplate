@@ -1,0 +1,122 @@
+.footer {
+  padding-top: 70px;
+  padding-bottom: 30px
+}
+
+.footer__flexbox {
+  -js-display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -20px;
+  margin-right: -20px;
+  font-size: 14px;
+  line-height: 1.71
+}
+
+@media screen and (max-width: 1023px) {
+  .footer__flexbox {
+      -webkit-box-orient:vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer__flexbox {
+      line-height:2.43;
+      margin: auto
+  }
+}
+
+.footer__about {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 20px;
+  padding-right: 20px
+}
+
+@media screen and (max-width: 767px) {
+  .footer__about {
+      margin-top:40px;
+      padding: 0
+  }
+}
+
+.footer__heading {
+  color: #323232;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top: 5px
+}
+
+.footer__copyright {
+  font-size: 14px;
+  -js-display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
+}
+
+@media screen and (max-width: 425px) {
+  .footer__copyright {
+      margin-top:35px;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center
+  }
+}
+
+.footer__office:nth-child(odd) {
+  margin-top: 15px
+}
+
+.footer__phone {
+  display: block
+}
+
+.footer__phone,.footer__phone a {
+  line-height: 1.3;
+  color: #323232
+}
+
+.footer__street {
+  display: block;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 1.54;
+  color: #323232;
+  opacity: .7
+}
+
+@media screen and (max-width: 425px) {
+  .footer__copy-container {
+      -webkit-box-ordinal-group:3;
+      -ms-flex-order: 2;
+      order: 2;
+      text-align: center;
+      margin-top: 35px
+  }
+}
+
+.footer__year {
+  font-size: inherit;
+  font-weight: 300;
+  color: #c2c2c2;
+  padding: 0px;
+}

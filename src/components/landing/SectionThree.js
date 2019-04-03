@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TweenOne from 'rc-tween-one'
+import { TweenOneGroup } from 'rc-tween-one'
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack'
 import { Tabs } from 'antd'
 
@@ -33,7 +33,7 @@ class SectionThree extends Component {
             </div>
           }
         >
-          <TweenOne.TweenOneGroup
+          <TweenOneGroup
             enter={{
               y: 30,
               delay: 300,
@@ -61,7 +61,7 @@ class SectionThree extends Component {
                 </div>
               </div>
             </div>
-          </TweenOne.TweenOneGroup>
+          </TweenOneGroup>
         </TabPane>
       )
     })
@@ -84,7 +84,7 @@ class SectionThree extends Component {
             <h1 className='title-h1'>WHAT WE OFFER</h1>
           </div>
           <OverPack>
-            <TweenOne.TweenOneGroup
+            <TweenOneGroup
               key='tabs'
               enter={{
                 y: 30, opacity: 0,
@@ -100,7 +100,7 @@ class SectionThree extends Component {
               >
                 {tabsChildren}
               </Tabs>
-            </TweenOne.TweenOneGroup>
+            </TweenOneGroup>
           </OverPack>
         </div>
       </div>
