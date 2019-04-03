@@ -8,6 +8,7 @@ import Banner from './Banner'
 import SectionOne from './SectionOne'
 import SectionTwo from './SectionTwo'
 import SectionThree from './SectionThree'
+import ClientSuccess from './ClientSuccess'
 import SectionFour from './SectionFour'
 import SectionFive from './SectionFive'
 import Footer from './Footer'
@@ -43,6 +44,7 @@ class Landing extends Component {
         <SectionOne />
         <SectionTwo />
         <SectionThree />
+        <ClientSuccess />
         <SectionFour />
         <SectionFive />
         <Footer />

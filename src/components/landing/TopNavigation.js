@@ -1,11 +1,9 @@
 import React, { Component, createRef } from 'react'
 import TweenOne from 'rc-tween-one'
-import { Menu, Row, Col, Button } from 'antd'
-import { withRouter } from 'react-router-dom'
+import { Menu, Row, Col, Button, Affix, Popover } from 'antd'
+import { withRouter, NavLink } from 'react-router-dom'
 
 const Item = Menu.Item
-const SubMenu = Menu.SubMenu
-const ItemGroup = Menu.ItemGroup
 
 @withRouter
 class TopNavigation extends Component {
@@ -87,7 +85,6 @@ class TopNavigation extends Component {
       {
         title: 'SERVICES',
         to: '/',
-        subMenu: true,
         customRender: (
           <>s</>
         )
@@ -95,7 +92,6 @@ class TopNavigation extends Component {
       {
         title: 'INDUSTRIES',
         to: '/',
-        subMenu: true,
         customRender: (
           <>s</>
         )
@@ -103,7 +99,6 @@ class TopNavigation extends Component {
       {
         title: 'RESOURCES',
         to: '/',
-        subMenu: true,
         customRender: (
           <>s</>
         )
@@ -111,7 +106,6 @@ class TopNavigation extends Component {
       {
         title: 'CLIENTS',
         to: '/',
-        subMenu: true,
         customRender: (
           <>s</>
         )
@@ -119,7 +113,6 @@ class TopNavigation extends Component {
       {
         title: 'COMPANY',
         to: '/',
-        subMenu: true,
         customRender: (
           <>s</>
         )
@@ -127,7 +120,6 @@ class TopNavigation extends Component {
       {
         title: 'GET IN TOUCH',
         to: '/',
-        subMenu: false,
         customRender: (
           <Button
             style={{
@@ -143,79 +135,65 @@ class TopNavigation extends Component {
       }
     ]
 
-    const navChildren = children.map((item, i) =>
-      item.subMenu
-      ? (
-        <SubMenu
-          key={i.toString()}
-          title={
-            <span style={{
-              color: isHovering && !isMobile ? '#000' : '#fff',
-              fontWeight: 600,
-              fontSize: 11
-            }}>{item.title}</span>
-          }
-          onMouseEnter={() => { if(!isMobile) this.onMenuHover(true)}}
-          onMouseLeave={() => { if(!isMobile) this.onMenuHover(false)}}
-          onTitleClick={() => this.onMenuTitleClick(item.to)}
-        >
-          <Item style={SubMenuPopupStyle}>
-            {item.customRender}
-          </Item>
-        </SubMenu>
-      )
-      : (
-        <Item key={i.toString()} style={{ border: 'none' }}>
-          {item.customRender}
-        </Item>
-      )
-    )
+    const navChildren = children.map((item, i) => (
+      <Item
+        key={i.toString()}
+        // style={{ border: 'none' }}
+        // onMouseEnter={() => { if(!isMobile) this.onMenuHover(true)}}
+        // onMouseLeave={() => { if(!isMobile) this.onMenuHover(false)}}
+        onTitleClick={() => this.onMenuTitleClick(item.to)}
+      >
+        <p>{item.customRender}</p>
+      </Item>
+    ))
 
     return (
-      <TweenOne
-        component='header'
-        animation={{ opacity: 0, type: 'from' }}
-        className='pageHeader home-page-wrapper'
-        style={{ background: isHovering ? '#fff' : 'transparent' }}
-      >
-        <div className={`home-page ${phoneOpen ? 'open' : ''}`}>
-          <TweenOne
-            animation={{ ...animationSettings, x: -30 }}
-            className='pageHeader-logo'
-          >
-            <img
-              width='100%'
-              src={`/media/${isHovering ? 'colorfulLogo' : 'whiteLogo'}.png`}
-              alt='img'
-            />
-          </TweenOne>
-          {
-            isMobile && (
-              <div
-                className='pageHeader-mobile-menu'
-                onClick={this.phoneClick}
-              >
-                <em />
-                <em />
-                <em />
-              </div>
-            )
-          }
-          <TweenOne
-            className='pageHeader-menu'
-            animation={{ ...animationSettings, x: 30 }}
-            ref={this.menu}
-            style={isMobile ? { height: menuHeight } : null}
-          >
-            <Menu
-              mode={isMobile ? 'inline' : 'horizontal'}
-              theme={isMobile ? 'dark' : 'default'}
+      <Affix>
+        <TweenOne
+          component='header'
+          animation={{ opacity: 0, type: 'from' }}
+          className='pageHeader home-page-wrapper'
+          style={{ background: isHovering ? '#fff' : 'transparent' }}
+        >
+          <div className={`home-page ${phoneOpen ? 'open' : ''}`}>
+            <TweenOne
+              animation={{ ...animationSettings, x: -30 }}
+              className='pageHeader-logo'
             >
-              {navChildren}
-            </Menu>
-          </TweenOne>
-        </div>
-      </TweenOne>
+              <img
+                width='100%'
+                src={`/media/${isHovering ? 'colorfulLogo' : 'whiteLogo'}.png`}
+                alt='img'
+              />
+            </TweenOne>
+            {
+              isMobile && (
+                <div
+                  className='pageHeader-mobile-menu'
+                  onClick={this.phoneClick}
+                >
+                  <em />
+                  <em />
+                  <em />
+                </div>
+              )
+            }
+            <TweenOne
+              className='pageHeader-menu'
+              animation={{ ...animationSettings, x: 30 }}
+              ref={this.menu}
+              style={isMobile ? { height: menuHeight } : null}
+            >
+              <Menu
+                mode={isMobile ? 'inline' : 'horizontal'}
+                theme={isMobile ? 'dark' : 'default'}
+              >
+                {navChildren}
+              </Menu>
+            </TweenOne>
+          </div>
+        </TweenOne>
+      </Affix>
     )
   }
 }
