@@ -24,4 +24,4 @@ const dataSource = {
   ]
 }
 
-export { dataSource }
+export default dataSource

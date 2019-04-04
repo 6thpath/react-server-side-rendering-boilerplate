@@ -13,7 +13,10 @@ class SectionFive extends Component {
 
     const animationSettings = {
       type: 'from',
-      ease: 'easeOutQuad'
+      ease: 'easeInOutQuad',
+      duration: 400,
+      y: 60,
+      opacity: 0
     }
 
     const title = [
@@ -33,7 +36,7 @@ class SectionFive extends Component {
       <div className='container'>
         <div className='home-page-wrapper content1-wrapper' style={{ padding: 0 }}>
           <div className='home-page content1' style={{ padding: 0, marginTop: 10 }}>
-            <TweenOne animation={{ ...animationSettings, x: -50 }}>
+            <TweenOne animation={animationSettings}>
               <div key='title' className='title-wrapper'>
                 {
                   title.map((item, i) =>

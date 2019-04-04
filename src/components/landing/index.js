@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { enquireScreen } from 'enquire-js'
 
 import './less/antMotionStyle.less'
 
@@ -13,23 +12,26 @@ import SectionFour from './SectionFour'
 import SectionFive from './SectionFive'
 import Footer from './Footer'
 
-let isMobile
-enquireScreen(b => {
-  isMobile = b
-})
 
 class Landing extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isMobile
+      isMobile: false
     }
   }
 
   componentDidMount () {
-    enquireScreen(b => {
-      this.setState({ isMobile: !!b })
-    })
+    window.addEventListener('resize', this.resize, false)
+    this.resize()
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener('resize', this.resize, false)
+  }
+
+  resize = () => {
+    this.setState({ isMobile: window.innerWidth <= 767});
   }
 
   render () {

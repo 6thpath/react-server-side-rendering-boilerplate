@@ -1,6 +1,5 @@
 import React, { Component, createElement } from 'react'
 import { TweenOneGroup } from 'rc-tween-one'
-import OverPack from 'rc-scroll-anim/lib/ScrollOverPack'
 import { Link } from 'react-router-dom'
 import { Icon } from 'antd'
 
@@ -33,11 +32,11 @@ class SectionFour extends Component {
               )
             )}
           </div>
-          <OverPack playScale={0.3}>
+          {/* <OverPack playScale={0.3}> */}
             <TweenOneGroup
               key='blog'
-              enter={{ y: 30, delay: 300, opacity: 0, type: 'from', ease: 'easeOutQuad' }}
-              leave={{ y: 30, opacity: 0 }}
+              enter={{ y: 60, delay: 300, opacity: 0, type: 'to' }}
+              leave={{ y: 60, opacity: 0 }}
               className='content4-img-wrapper'
             >
               <div className='container'>
@@ -113,7 +112,7 @@ class SectionFour extends Component {
                 </div>
               </div>
             </TweenOneGroup>
-          </OverPack>
+          {/* </OverPack> */}
         </div>
       </div>
     )

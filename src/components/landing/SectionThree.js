@@ -39,7 +39,7 @@ class SectionThree extends Component {
               delay: 300,
               opacity: 0,
               type: 'from',
-              ease: 'easeOutQuad',
+              ease: 'easeOutQuad'
             }}
             leave={{ y: 30, opacity: 0 }}
             component=''

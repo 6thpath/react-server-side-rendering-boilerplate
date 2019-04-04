@@ -1,4 +1,6 @@
-import { dataSource as section1Data } from './1stSection'
-import { dataSource as section3Data } from './3rdSection'
+import headerData from './headerDataSource'
+import bannerData from './bannerData'
+import section1Data from './1stSection'
+import section3Data from './3rdSection'
 
-export { section1Data, section3Data }
+export { headerData, bannerData, section1Data, section3Data }

@@ -5,7 +5,7 @@
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
     ["@babel/plugin-proposal-class-properties", { "loose": true }],
     "@babel/transform-runtime",
-    "@babel/plugin-proposal-optional-chaining",
+    ["@babel/plugin-proposal-optional-chaining", { "loose": false }],
     ["import", { "libraryName": "antd", "style": "css" }]
   ]
 }
