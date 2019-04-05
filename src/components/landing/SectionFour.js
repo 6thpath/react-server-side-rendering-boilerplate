@@ -1,5 +1,7 @@
 import React, { Component, createElement } from 'react'
-import { TweenOneGroup } from 'rc-tween-one'
+import TweenOne from 'rc-tween-one'
+import { OverPack } from 'rc-scroll-anim'
+import QueueAnim from 'rc-queue-anim'
 import { Link } from 'react-router-dom'
 import { Icon } from 'antd'
 
@@ -8,7 +10,7 @@ import { mediaDir } from '../media_dirname'
 class SectionFour extends Component {
   render() {
     const title = [
-      { name: 'title', children: 'LATEST NEWS AND INSIGHTS', className: 'title-h1' }
+      { name: 'title', children: 'Latest News And Insights', className: 'title-h1' }
     ]
 
     return (
@@ -32,87 +34,91 @@ class SectionFour extends Component {
               )
             )}
           </div>
-          {/* <OverPack playScale={0.3}> */}
-            <TweenOneGroup
-              key='blog'
-              enter={{ y: 60, delay: 300, opacity: 0, type: 'to' }}
-              leave={{ y: 60, opacity: 0 }}
-              className='content4-img-wrapper'
+            <OverPack>
+            <TweenOne
+              key='0'
+              animation={{ opacity: 1 }}
+              style={{ opacity: 0 }}
+              // className='content4-img-wrapper'
             >
-              <div className='container'>
-                <div className='blog__grid js-show'>
+              <QueueAnim
+                key='queue'
+                leaveReverse
+              >
+                <div className='container'>
+                  <div className='blog__grid js-show'>
 
-                  <div className='featured-post__wrapper'>
-                    <div className='blog__item'>
-                      <div className='blog__content'>
-                        <div className='blog__media'>
-                          <div
-                            className='blog__media-inner'
-                            style={{ backgroundImage: `url(${mediaDir('blogs/misc1.jpg')})` }}
-                          />
+                    <div className='featured-post__wrapper'>
+                      <div className='blog__item'>
+                        <div className='blog__content'>
+                          <div className='blog__media'>
+                            <div
+                              className='blog__media-inner'
+                              style={{ backgroundImage: `url(${mediaDir('blogs/misc1.jpg')})` }}
+                            />
+                          </div>
+                          <div className='blog__text'>
+                            <span className='blog__tag'>AR</span>
+                            <Link to='/'>
+                              <h3 className='blog__title'>AR Apps, Eyepieces &amp; Mirrors: How Augmented Reality Changes the World</h3>
+                            </Link>
+                            <p className='blog__description'>5 exciting examples from retail, marketing, and the military.</p>
+                            <Link to='/' className='blog__link--more'>
+                              Learn more <Icon type='right' />
+                            </Link>
+                          </div>
                         </div>
-                        <div className='blog__text'>
-                          <span className='blog__tag'>AR</span>
-                          <Link to='/'>
-                            <h3 className='blog__title'>AR Apps, Eyepieces &amp; Mirrors: How Augmented Reality Changes the World</h3>
-                          </Link>
-                          <p className='blog__description'>5 exciting examples from retail, marketing, and the military.</p>
-                          <Link to='/' className='blog__link--more'>
-                            Learn more <Icon type='right' />
-                          </Link>
+                      </div>
+                    </div>
+
+                    <div className='posts__wrapper'>
+                      <div className='blog__item'>
+                        <div className='blog__content'>
+                          <div className='blog__media'>
+                            <div
+                              className='blog__media-inner'
+                              style={{ backgroundImage: `url(${mediaDir('blogs/misc2.jpg')})` }}
+                            />
+                          </div>
+                          <div className='blog__text'>
+                            <span className='blog__tag'>Business</span>
+                            <Link to='/'>
+                              <h3 className='blog__title'>Apps Inspired by Uber: Android App Development Examples &amp; Tips</h3>
+                            </Link>
+                            <p className='blog__description'>Five apps inspired by Uber, plus several development tips.</p>
+                            <Link to='/' className='blog__link--more'>
+                              Learn more <Icon type='right' />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className='blog__item'>
+                        <div className='blog__content'>
+                          <div className='blog__media'>
+                            <div
+                              className='blog__media-inner'
+                              style={{ backgroundImage: `url(${mediaDir('blogs/misc3.jpeg')})` }}
+                            />
+                          </div>
+                          <div className='blog__text'>
+                            <span className='blog__tag'>Business</span>
+                            <Link to='/'>
+                              <h3 className='blog__title'>Biggest Flops &amp; Disappointments in Enterprise Application Development</h3>
+                            </Link>
+                            <p className='blog__description'>Avoid the mistakes from our selection at all costs.</p>
+                            <Link to='/' className='blog__link--more'>
+                              Learn more <Icon type='right' />
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-
-                  <div className='posts__wrapper'>
-                    <div className='blog__item'>
-                      <div className='blog__content'>
-                        <div className='blog__media'>
-                          <div
-                            className='blog__media-inner'
-                            style={{ backgroundImage: `url(${mediaDir('blogs/misc2.jpg')})` }}
-                          />
-                        </div>
-                        <div className='blog__text'>
-                          <span className='blog__tag'>Business</span>
-                          <Link to='/'>
-                            <h3 className='blog__title'>Apps Inspired by Uber: Android App Development Examples &amp; Tips</h3>
-                          </Link>
-                          <p className='blog__description'>Five apps inspired by Uber, plus several development tips.</p>
-                          <Link to='/' className='blog__link--more'>
-                            Learn more <Icon type='right' />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className='blog__item'>
-                      <div className='blog__content'>
-                        <div className='blog__media'>
-                          <div
-                            className='blog__media-inner'
-                            style={{ backgroundImage: `url(${mediaDir('blogs/misc3.jpeg')})` }}
-                          />
-                        </div>
-                        <div className='blog__text'>
-                          <span className='blog__tag'>Business</span>
-                          <Link to='/'>
-                            <h3 className='blog__title'>Biggest Flops &amp; Disappointments in Enterprise Application Development</h3>
-                          </Link>
-                          <p className='blog__description'>Avoid the mistakes from our selection at all costs.</p>
-                          <Link to='/' className='blog__link--more'>
-                            Learn more <Icon type='right' />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
-              </div>
-            </TweenOneGroup>
-          {/* </OverPack> */}
+              </QueueAnim>
+            </TweenOne>
+          </OverPack>
         </div>
       </div>
     )

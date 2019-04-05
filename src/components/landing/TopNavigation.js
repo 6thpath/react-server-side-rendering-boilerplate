@@ -108,20 +108,13 @@ class TopNavigation extends Component {
     </div>
   )
 
-  render () {
+  navChildren = () => {
     const {
       props: { isMobile },
-      state: { menuHeight, phoneOpen, isHovering },
+      state: { isHovering },
       returnPopoverContent
     } = this
-
-    const animationSettings = {
-      delay: 300,
-      type: 'from',
-      ease: 'easeOutQuad'
-    }
-
-    const navChildren = headerData.map((item, i) => {
+    return headerData.map((item, i) => {
       const popoverContent = !item.isCustomRender && returnPopoverContent(item.popoverContent)
       return item.isCustomRender
       ? (
@@ -195,6 +188,19 @@ class TopNavigation extends Component {
         </Item>
       )
     })
+  }
+
+  render () {
+    const {
+      props: { isMobile },
+      state: { menuHeight, phoneOpen, isHovering }
+    } = this
+
+    const animationSettings = {
+      delay: 300,
+      type: 'from',
+      ease: 'easeOutQuad'
+    }
 
     return (
       <Affix style={{ height: 0 }}>
@@ -215,18 +221,18 @@ class TopNavigation extends Component {
                 alt='img'
               />
             </TweenOne>
-            {
-              isMobile && (
-                <div
-                  className='pageHeader-mobile-menu'
-                  onClick={this.phoneClick}
-                >
-                  <em />
-                  <em />
-                  <em />
-                </div>
-              )
-            }
+              {
+                isMobile && (
+                  <div
+                    className='pageHeader-mobile-menu'
+                    onClick={this.phoneClick}
+                  >
+                    <em />
+                    <em />
+                    <em />
+                  </div>
+                )
+              }
             <TweenOne
               className='pageHeader-menu'
               animation={{ ...animationSettings, x: 50 }}
@@ -237,7 +243,7 @@ class TopNavigation extends Component {
                 mode={isMobile ? 'inline' : 'horizontal'}
                 theme={isMobile ? 'dark' : 'default'}
               >
-                {navChildren}
+                {this.navChildren()}
               </Menu>
             </TweenOne>
           </div>

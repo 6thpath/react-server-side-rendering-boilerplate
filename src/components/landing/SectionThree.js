@@ -81,7 +81,7 @@ class SectionThree extends Component {
       >
         <div className='home-page content3' style={{ padding: 20 }}>
           <div className='title-wrapper'>
-            <h1 className='title-h1'>WHAT WE OFFER</h1>
+            <h1 className='title-h1'>What We Offer</h1>
           </div>
           <OverPack>
             <TweenOneGroup

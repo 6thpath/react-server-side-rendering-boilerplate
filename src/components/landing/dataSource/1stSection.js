@@ -2,7 +2,7 @@ const dataSource = {
   aboutUs: [
     {
       name: 'title',
-      children: 'ABOUT US',
+      children: 'About Us',
       className: 'title-h1',
     },
     {
